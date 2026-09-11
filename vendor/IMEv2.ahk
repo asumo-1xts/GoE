@@ -1,3 +1,5 @@
+#Requires AutoHotkey v2.0
+
 ; 出典：https://qiita.com/kenichiro_ayaki/items/d55005df2787da725c6f#31-ime_get-
 
 ;-----------------------------------------------------------
