@@ -1,5 +1,5 @@
 {
   "startup": true,
   "apps": ["Discord.exe"],
-  "sites": ["discord.com", "teams.live.com", "chatgpt.com", "gemini.google.com"]
+  "sites": ["discord.com", "teams.live.com", "x.com/i/chat", "chatgpt.com", "gemini.google.com"]
 }
