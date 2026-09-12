@@ -13,9 +13,12 @@ class ImeEnterController {
 
         ; 1文字キーの挙動を定義
         for key in StrSplit("abcdefghijklmnopqrstuvwxyz0123456789") {
-            Hotkey("~" key, (*) => this.OnChar())       ; 文字のみ
-            Hotkey("~+" key, (*) => this.OnChar())      ; Shift+文字
-            Hotkey("~^" key, (*) => this.OnCtrlChar())  ; Ctrl+文字
+            ; 文字扱いしてよいもの：スルーして後処理
+            Hotkey("~" key, (*) => this.OnChar())
+            Hotkey("~+" key, (*) => this.OnChar())
+
+            ; Ctrl+文字：スルーせずホットキー名を受け取る
+            Hotkey("^" key, (hk) => this.OnCtrlChar(hk))
         }
 
         ; Enterキーの挙動を定義
@@ -25,17 +28,25 @@ class ImeEnterController {
         HotIf()
     }
 
-    ; Shift以外の修飾キーが押されている場合、1文字入力とは見做さない
+    ; 未確定文字があるかどうかを判定する
+    IsConfirmed() {
+        return IME_GET("A") && this.hasChar
+    }
+
     OnChar() {
         this.hasChar := IME_GET("A")
     }
 
-    OnCtrlChar() {
-        this.hasChar := false
+    OnCtrlChar(hk) {
+        ; 未確定文字があるときは何もしない
+        ; 主にCtrl+Aでカーソルが行頭に移動するのを防ぐため
+        if !this.IsConfirmed() {
+            Send("{Blind}" . SubStr(hk, 2))
+        }
     }
 
     OnEnter() {
-        Send((IME_GET("A") && this.hasChar) ? "{Enter}" : "+{Enter}")
+        Send(this.IsConfirmed() ? "{Enter}" : "+{Enter}")
         this.hasChar := false
     }
 
