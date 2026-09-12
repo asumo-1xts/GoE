@@ -11,8 +11,12 @@ class ImeEnterController {
 
         HotIf((*) => matcher.IsActive())
 
+        alphabets := "abcdefghijklmnopqrstuvwxyz"
+        numbers := "0123456789"
+        symbols := "`-`=`[`]`\`;\`',`./````"
+
         ; 1文字キーの挙動を定義
-        for key in StrSplit("abcdefghijklmnopqrstuvwxyz0123456789") {
+        for key in StrSplit(alphabets . numbers . symbols) {
             ; 文字扱いしてよいもの：スルーして後処理
             Hotkey("~" key, (*) => this.OnChar())
             Hotkey("~+" key, (*) => this.OnChar())
