@@ -3,7 +3,8 @@
 </h1>
 
 <div align="center">
-  <b>👼Enterの神様👼</b>
+  <b>Enterの神様</b>
+  <p>👼</p>
   <p>チャットアプリにおいてEnterキーによる誤送信を撲滅するための常駐アプリ</p>
 
 | 操作       | Before            | After            |
@@ -27,16 +28,18 @@
 - Windows 11
   - Microsoft IME
 
-### デスクトップアプリ
+### 対応アプリ
 
-`config.json`内の`apps`にて追加・削除が可能です。\
-`GoE.exe`を再起動することで設定が反映されます。
+Discord
 
-- Discord
+### 対応Webサイト
 
-### Webサイト
+[Discord](https://discord.com/)
 
-`config.json`内の`sites`にて追加・削除が可能です。\
-`GoE.exe`を再起動することで設定が反映されます。
+[ChatGPT](https://chatgpt.com/) / [Gemini](https://gemini.google.com/)
 
-- ChatGPT
+---
+
+> [!NOTE]
+> `config.json`内の`apps`および`sites`にてアプリやWebサイトの追加・削除が可能です。\
+> `GoE.exe`を再起動することで設定が反映されます。
