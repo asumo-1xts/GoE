@@ -1,5 +1,5 @@
 <h1 align="center">
-  The God of Enter
+  The God of Enter <img src="assets/GoE.ico" alt="GoE Icon" width="30" height="30">
 </h1>
 
 <div align="center">
