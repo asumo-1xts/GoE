@@ -34,7 +34,7 @@ Discord
 
 ### 対応Webサイト
 
-[Discord](https://discord.com/)
+[Discord](https://discord.com/) / [Teams](https://teams.live.com/v2/)
 
 [ChatGPT](https://chatgpt.com/) / [Gemini](https://gemini.google.com/)
 
