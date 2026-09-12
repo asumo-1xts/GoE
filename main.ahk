@@ -1,48 +1,17 @@
 #Requires AutoHotkey v2.0
+#SingleInstance Force
 
-#Include init.ahk           ; スタートアップ登録処理
-#Include vendor/IMEv2.ahk   ; IME操作ライブラリ
+#Include vendor/JSON.ahk
+#Include vendor/IMEv2.ahk
+#Include src/Config.ahk
+#Include src/TargetMatcher.ahk
+#Include src/ImeEnterController.ahk
 
-ImeEnterController()        ; インスタンスを生成して実行
+A_IconTip := "GoE"
+SetTitleMatchMode(2)    ; ウィンドウタイトルを部分一致で判定する
 
-class ImeEnterController {
-    hasChar := false        ; 既に何らかの文字があるか否かのフラグ
+cfg := Config("config.json")
+cfg.ApplyStartup(A_IconTip)
 
-    __New() {
-        HotIf((*) => IsTargetActive())
-
-        ; 1文字キーの挙動を定義
-        for key in StrSplit("abcdefghijklmnopqrstuvwxyz0123456789") {
-            Hotkey("~*" key, (*) => this.OnChar())
-        }
-
-        ; Enterキーの挙動を定義
-        Hotkey("$Enter", (*) => this.OnEnter())
-        Hotkey("^Enter", (*) => this.OnCtrlEnter())
-
-        HotIf()
-    }
-
-    ; Shiftキー以外で修飾されているならフラグを折る
-    OnChar() {
-        if GetKeyState("Ctrl") || GetKeyState("Alt") {
-            this.hasChar := false
-        } else {
-            this.hasChar := true
-        }
-    }
-
-    OnEnter() {
-        if (IME_GET("A") && this.hasChar) {
-            Send("{Enter}")
-        } else {
-            Send("+{Enter}")
-        }
-        this.hasChar := false
-    }
-
-    OnCtrlEnter() {
-        Send("{Enter}")
-        this.hasChar := false
-    }
-}
+matcher := TargetMatcher(cfg.apps, cfg.sites)
+ImeEnterController(matcher)
