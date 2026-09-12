@@ -14,18 +14,6 @@
 
 </div>
 
-## 対応環境
-
-- Windows 11
-  - Microsoft IME
-
-デフォルト設定での対応アプリは下記の通りです。
-
-- Discord
-
-`config.json`内の`apps`にて対応アプリの追加・削除が可能です。\
-`GoE.exe`を再起動することで設定が反映されます。
-
 ## インストールと実行
 
 1. [Release](https://github.com/asumo-1xts/GoE/releases)から`GoE.zip`をダウンロードして、適当なフォルダに展開
@@ -33,3 +21,21 @@
 
 デフォルト設定では、次回のPC起動時から自動で`GoE.exe`が実行されるようになります。\
 これを無効化したい場合は、`config.json`内の`"startup"`を`false`にしてください。
+
+## 対応環境
+
+- Windows 11
+  - Microsoft IME
+
+---
+
+`config.json`内の`apps`および`sites`にてアプリやWebサイトの追加・削除が可能です。\
+`GoE.exe`を再起動することで設定が反映されます。
+
+### デスクトップアプリ
+
+- Discord
+
+### Webサイト
+
+- ChatGPT

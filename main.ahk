@@ -9,7 +9,7 @@ class ImeEnterController {
     hasChar := false        ; 既に何らかの文字があるか否かのフラグ
 
     __New() {
-        HotIfWinActive("ahk_group TargetApps")
+        HotIf((*) => IsTargetActive())
 
         ; 1文字キーの挙動を定義
         for key in StrSplit("abcdefghijklmnopqrstuvwxyz0123456789") {

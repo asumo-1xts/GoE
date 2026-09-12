@@ -1,4 +1,5 @@
 {
   "startup": true,
-  "apps": ["Discord.exe"]
+  "apps": ["Discord.exe"],
+  "sites": ["ChatGPT"]
 }
