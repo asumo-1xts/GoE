@@ -1,6 +1,6 @@
 #Requires AutoHotkey v2.0
 
-#Include init.ahk          ; スタートアップ登録処理
+#Include init.ahk           ; スタートアップ登録処理
 #Include vendor/IMEv2.ahk   ; IME操作ライブラリ
 
 ImeEnterController()        ; インスタンスを生成して実行
