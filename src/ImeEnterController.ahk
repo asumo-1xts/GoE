@@ -25,7 +25,7 @@ class ImeEnterController {
 
     ; Shift以外の修飾キーが押されている場合、1文字入力とは見做さない
     OnChar() {
-        this.hasChar := !(GetKeyState("Ctrl") || GetKeyState("Alt"))
+        this.hasChar := !(GetKeyState("Ctrl") || GetKeyState("Alt")) && IME_GET("A")
     }
 
     OnEnter() {
