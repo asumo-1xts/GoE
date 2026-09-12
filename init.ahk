@@ -11,13 +11,20 @@ if FileExist(configFile) {
     configData := JSON.parse(fileContent)
 
     ; スタートアップ設定
-    if (configData.Has("startup") && configData["startup"]) {
+    if (configData.Has("startup")) {
         ; スタートアップフォルダ内のショートカットパス
         shortcutPath := A_Startup . "\" . A_IconTip . ".lnk"
 
-        if !FileExist(shortcutPath) {
+        if (configData["startup"]) {
             ; ショートカットが存在しない場合、作成して追加
-            FileCreateShortcut(A_ScriptFullPath, shortcutPath)
+            if !FileExist(shortcutPath) {
+                FileCreateShortcut(A_ScriptFullPath, shortcutPath)
+            }
+        } else {
+            ; ショートカットが存在する場合、削除
+            if FileExist(shortcutPath) {
+                FileDelete(shortcutPath)
+            }
         }
     }
 
