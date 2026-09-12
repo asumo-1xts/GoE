@@ -13,7 +13,9 @@ class ImeEnterController {
 
         ; 1文字キーの挙動を定義
         for key in StrSplit("abcdefghijklmnopqrstuvwxyz0123456789") {
-            Hotkey("~*" key, (*) => this.OnChar())
+            Hotkey("~" key, (*) => this.OnChar())       ; 文字のみ
+            Hotkey("~+" key, (*) => this.OnChar())      ; Shift+文字
+            Hotkey("~^" key, (*) => this.OnCtrlChar())  ; Ctrl+文字
         }
 
         ; Enterキーの挙動を定義
@@ -25,7 +27,11 @@ class ImeEnterController {
 
     ; Shift以外の修飾キーが押されている場合、1文字入力とは見做さない
     OnChar() {
-        this.hasChar := !(GetKeyState("Ctrl") || GetKeyState("Alt")) && IME_GET("A")
+        this.hasChar := IME_GET("A")
+    }
+
+    OnCtrlChar() {
+        this.hasChar := false
     }
 
     OnEnter() {
