@@ -5,7 +5,7 @@ $ErrorActionPreference = "Stop"
 powershell -File "scripts/convert.ps1"
 
 # 2. 圧縮対象の存在チェック
-$targets = @("GoE.exe", "config.json", "assets")
+$targets = @("GoE.exe", "config.json")
 foreach ($target in $targets) {
     if (-not (Test-Path $target)) {
         Write-Error "Required file/folder missing: $target"
