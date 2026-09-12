@@ -11,9 +11,9 @@ class ImeEnterController {
     __New() {
         HotIfWinActive("ahk_group TargetApps")
 
-        ; 1文字キーが押されたらフラグを立てる
+        ; 1文字キーの挙動を定義
         for key in StrSplit("abcdefghijklmnopqrstuvwxyz0123456789") {
-            Hotkey("~*" key, (*) => this.hasChar := true)
+            Hotkey("~*" key, (*) => this.OnChar())
         }
 
         ; Enterキーの挙動を定義
@@ -21,6 +21,15 @@ class ImeEnterController {
         Hotkey("^Enter", (*) => this.OnCtrlEnter())
 
         HotIf()
+    }
+
+    ; Shiftキー以外で修飾されているならフラグを折る
+    OnChar() {
+        if GetKeyState("Ctrl") || GetKeyState("Alt") {
+            this.hasChar := false
+        } else {
+            this.hasChar := true
+        }
     }
 
     OnEnter() {
