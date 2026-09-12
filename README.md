@@ -27,15 +27,16 @@
 - Windows 11
   - Microsoft IME
 
----
-
-`config.json`内の`apps`および`sites`にてアプリやWebサイトの追加・削除が可能です。\
-`GoE.exe`を再起動することで設定が反映されます。
-
 ### デスクトップアプリ
+
+`config.json`内の`apps`にて追加・削除が可能です。\
+`GoE.exe`を再起動することで設定が反映されます。
 
 - Discord
 
 ### Webサイト
+
+`config.json`内の`sites`にて追加・削除が可能です。\
+`GoE.exe`を再起動することで設定が反映されます。
 
 - ChatGPT
