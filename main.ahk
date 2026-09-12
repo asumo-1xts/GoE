@@ -4,8 +4,9 @@
 #Include vendor/JSON.ahk
 #Include vendor/IMEv2.ahk
 #Include src/Config.ahk
-#Include src/TargetMatcher.ahk
 #Include src/ImeEnterController.ahk
+#Include src/SetTaskTray.ahk
+#Include src/TargetMatcher.ahk
 
 A_IconTip := "GoE"      ; このアプリの内部的な名前
 SetTitleMatchMode(2)    ; ウィンドウタイトルを部分一致で判定する
