@@ -11,11 +11,11 @@
 #### EXEファイルを生成
 
 ```powershell
-powershell -ExecutionPolicy RemoteSigned -File "scripts/convert.ps1"
+powershell -ExecutionPolicy RemoteSigned -File "scripts\convert.ps1"
 ```
 
 #### リリース用ZIPファイルを生成
 
 ```powershell
-powershell -ExecutionPolicy RemoteSigned -File "scripts/release.ps1"
+powershell -ExecutionPolicy RemoteSigned -File "scripts\release.ps1"
 ```

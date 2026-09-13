@@ -2,7 +2,7 @@
 $ErrorActionPreference = "Stop"
 
 # 1. Ahk2Exeでコンパイル
-powershell -File "scripts/convert.ps1"
+powershell -File "scripts\convert.ps1"
 
 # 2. 圧縮対象の存在チェック
 $targets = @("GoE.exe", "config.json")
