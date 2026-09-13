@@ -8,11 +8,10 @@
 #Include src/SetTaskTray.ahk
 #Include src/TargetMatcher.ahk
 
-A_IconTip := "GoE"      ; このアプリの内部的な名前
-SetTitleMatchMode(2)    ; ウィンドウタイトルを部分一致で判定する
+A_IconTip := "The God of Enter" ; トレイアイコンの表示名
+SetTitleMatchMode(2)            ; ウィンドウタイトルを部分一致で判定する設定
 
-cfg := Config("config.json")    ; 設定を読み込む
-cfg.ApplyStartup(A_IconTip)     ; 設定を適用
-
-matcher := TargetMatcher(cfg.apps, cfg.sites)
-ImeEnterController(matcher) ; 本編開始
+cfg := Config("config.json")                  ; 設定をロード
+cfg.ApplyStartup("GoE")                       ; スタートアップ設定を適用
+matcher := TargetMatcher(cfg.apps, cfg.sites) ; 対応するターゲットを把握
+ImeEnterController(matcher)                   ; 本編開始
