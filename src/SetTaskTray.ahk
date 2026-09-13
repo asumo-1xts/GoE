@@ -8,6 +8,8 @@ A_TrayMenu.Add("設定", Menu_OpenConfig)
 A_TrayMenu.Add()
 A_TrayMenu.Add("情報", Menu_OpenInfo)
 A_TrayMenu.Add()
+A_TrayMenu.Add("再起動", Menu_Restart)
+A_TrayMenu.Add()
 A_TrayMenu.Add("終了", Menu_Exit)
 
 ; タスクトレイアイコンへの通知メッセージ（0x404）をフック
@@ -33,6 +35,10 @@ Menu_OpenConfig(ItemName, ItemPos, MyMenu) {
 
 Menu_OpenInfo(ItemName, ItemPos, MyMenu) {
     Run("https://github.com/asumo-1xts/GoE")
+}
+
+Menu_Restart(ItemName, ItemPos, MyMenu) {
+    Reload()
 }
 
 Menu_Exit(ItemName, ItemPos, MyMenu) {
