@@ -2,7 +2,10 @@
 
 #Include ../vendor/JSON.ahk
 
-; config.json を読み込み、設定値を保持するクラス
+/**
+ * @class Config
+ * @description config.json を読み込み、設定値を保持するクラス
+ */
 class Config {
     startup := false
     apps := []
@@ -40,7 +43,11 @@ class Config {
         }
     }
 
-    ; スタートアップのショートカットを作成または削除する関数
+    /**
+     * @function ApplyStartup
+     * @param name ショートカットの名前
+     * @description スタートアップのショートカットを作成または削除する関数
+     */
     ApplyStartup(name) {
         shortcutPath := A_Startup "\" name ".lnk"
 

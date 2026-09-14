@@ -2,7 +2,10 @@
 
 #Include ./GetIME.ahk
 
-; Enterキーの挙動を差し替えるコントローラー
+/**
+ * @class ImeEnterController
+ * @description Enterキーの挙動を差し替えるコントローラー
+ */
 class ImeEnterController {
     hasChar := false
 

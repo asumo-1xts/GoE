@@ -2,7 +2,10 @@
 
 #Include ../vendor/UIA_fixed.ahk
 
-; アクティブなウィンドウおよびUIA要素が有効化の対象かどうかを判定するクラス
+/**
+ * @class TargetMatcher
+ * @description アクティブなウィンドウおよびUIA要素が有効化の対象かどうかを判定するクラス
+ */
 class TargetMatcher {
     static siteGroup := "GoETargetSites"
 
@@ -12,7 +15,11 @@ class TargetMatcher {
         this.hasSites := sites.Length > 0
     }
 
-    ; ウィンドウおよびブラウザのURLから対象かどうかを判定
+    /**
+     * @function IsActive
+     * @description ウィンドウおよびブラウザのURLから対象かどうかを判定
+     * @return true: 対象 / false: 非対象
+     */
     IsActive() {
         hwnd := WinActive("A")
 
@@ -35,7 +42,12 @@ class TargetMatcher {
         return false
     }
 
-    ; UIA経由でブラウザのアドレスバーからURLを取得・検証
+    /**
+     * @function IsTargetUrl
+     * @description UIA経由でブラウザのアドレスバーからURLを取得・検証
+     * @param hwnd 対象ウィンドウのハンドル
+     * @return true: 対象URL / false: 非対象URL
+     */
     IsTargetUrl(hwnd) {
         try {
             ; アクティブウィンドウのUIA要素を取得
