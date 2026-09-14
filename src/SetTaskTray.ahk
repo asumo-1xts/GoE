@@ -1,5 +1,8 @@
 #Requires AutoHotkey v2.0
 
+; デフォルト設定を保持しておく
+DefaultConfigJson := FileRead("config.json")
+
 ; 標準メニュー項目をすべて削除
 A_TrayMenu.Delete()
 
@@ -24,13 +27,11 @@ AHK_NOTIFYICON(wParam, lParam, msg, hwnd) {
 }
 
 Menu_OpenConfig(ItemName, ItemPos, MyMenu) {
-    if FileExist("config.json") {
-        Run("config.json")
+    if !FileExist("config.json") {
+        FileAppend(DefaultConfigJson, "config.json")
     }
-    else {
-        ToolTip("config.jsonが見つかりません。")
-        SetTimer(() => ToolTip(), -1000)
-    }
+
+    Run("config.json")
 }
 
 Menu_OpenInfo(ItemName, ItemPos, MyMenu) {
