@@ -1,4 +1,4 @@
-#Requires AutoHotkey v2.0
+﻿#Requires AutoHotkey v2.0
 
 /*
     Introduction & credits
@@ -2255,7 +2255,8 @@ RegularCUI:
                 for pName, pVal in UIA.Pattern.OwnProps()
                     if IsInteger(pVal) && IsAlnum(pName) && UIA.HasProp("IUIAutomation" pName "Pattern") && (pName !=
                         "LegacyIAccessible") { ; Skip LegacyIAccessible to avoid name collisions (eg Select)
-                        if tryName := UIA.IUIAutomation%pName%Pattern.Prototype.HasProp(NewName) ? NewName : UIA.IUIAutomation%pName%Pattern.Prototype.HasProp(Name) ? Name : "" {
+                        if tryName := UIA.IUIAutomation%pName%Pattern.Prototype.HasProp(NewName) ? NewName :
+                            UIA.IUIAutomation%pName%Pattern.Prototype.HasProp(Name) ? Name : "" {
                             try return this.%pName%Pattern.%tryName%
                             catch Any as err {
                                 if this.Is%pName%PatternAvailable
@@ -2276,9 +2277,10 @@ RegularCUI:
             if this.base.HasOwnProp(NewName)
                 return this.%NewName% := Value
             for pName, pVal in UIA.Pattern.OwnProps()
-                if IsInteger(pVal) && IsAlnum(pName) && UIA.HasProp("IUIAutomation" pName "Pattern") && pName !=
-                "LegacyIAccessible" {
-                    if tryName := UIA.IUIAutomation%pName%Pattern.Prototype.HasProp(NewName) ? NewName : UIA.IUIAutomation%pName%Pattern.Prototype.HasProp(Name) ? Name : "" {
+                if IsInteger(pVal) && IsAlnum(pName) && UIA.HasProp("IUIAutomation" pName "Pattern") && (pName !=
+                    "LegacyIAccessible") {
+                    if tryName := UIA.IUIAutomation%pName%Pattern.Prototype.HasProp(NewName) ? NewName :
+                        UIA.IUIAutomation%pName%Pattern.Prototype.HasProp(Name) ? Name : "" {
                         try return this.%pName%Pattern.%tryName% := Value
                         catch Any as err {
                             if this.Is%pName%PatternAvailable
@@ -2304,7 +2306,8 @@ RegularCUI:
             for pName, pVal in UIA.Pattern.OwnProps()
                 if IsInteger(pVal) && IsAlpha(pName) && UIA.HasProp("IUIAutomation" pName "Pattern") && (pName !=
                     "LegacyIAccessible") {
-                    if (tryName := UIA.IUIAutomation%pName%Pattern.Prototype.HasMethod(Name) ? Name : UIA.IUIAutomation%pName%Pattern.Prototype.HasMethod(NewName) ? NewName : "") {
+                    if (tryName := UIA.IUIAutomation%pName%Pattern.Prototype.HasMethod(Name) ? Name :
+                        UIA.IUIAutomation%pName%Pattern.Prototype.HasMethod(NewName) ? NewName : "") {
                         try return this.%pName%Pattern.%tryName%(Params*)
                         catch Any as err {
                             if this.Is%pName%PatternAvailable
