@@ -65,8 +65,9 @@ class TargetMatcher {
                 }
             }
         } catch {
-            return false ; UIA取得失敗時のエラーを防止
+            return false
         }
+
         return false
     }
 }

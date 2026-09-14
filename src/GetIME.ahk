@@ -11,8 +11,9 @@ IME_GET(WinTitle := "A") {
     hwnd := WinExist(WinTitle)
     if !hwnd {
         return 0
+    }
 
-    targetHwnd := hwnd
+    targetHwnd := hwnd ; いったん宣言せざるを得ない
 
     ; UIAライブラリを利用してWebView2/Chromiumベースのアプリか判定
     if UIA.WindowIsChromium(hwnd) {
