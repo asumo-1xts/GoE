@@ -9,7 +9,7 @@
  */
 IME_GET(WinTitle := "A") {
     hwnd := WinExist(WinTitle)
-    if !hwnd
+    if !hwnd {
         return 0
 
     targetHwnd := hwnd
@@ -17,9 +17,8 @@ IME_GET(WinTitle := "A") {
     ; UIAライブラリを利用してWebView2/Chromiumベースのアプリか判定
     if UIA.WindowIsChromium(hwnd) {
         ; Teams v2などの場合、入力を処理する内部コントロールのHWNDを取得
-        try targetHwnd := ControlGetHwnd("Chrome_RenderWidgetHostHWND1", hwnd)
-    }
-    else if WinActive(WinTitle) {
+        targetHwnd := ControlGetHwnd("Chrome_RenderWidgetHostHWND1", hwnd)
+    } else if WinActive(WinTitle) {
         ; 従来のWindowsアプリ向けフォーカス取得処理
         ptrSize := !A_PtrSize ? 4 : A_PtrSize
         cbSize := 4 + 4 + (ptrSize * 6) + 16
