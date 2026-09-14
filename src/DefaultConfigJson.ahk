@@ -17,4 +17,5 @@ DefaultConfigJson := "
     "gemini.google.com"
   ]
 }
+
 )"
