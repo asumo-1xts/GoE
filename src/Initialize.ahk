@@ -3,10 +3,10 @@
 #Include ../vendor/JSON.ahk
 
 /**
- * @class Config
+ * @class Initialize
  * @description config.json を読み込み、設定値を保持するクラス
  */
-class Config {
+class Initialize {
     startup := false
     apps := []
     sites := []
