@@ -1,3 +1,5 @@
+mkdir dist -Force | Out-Null
+
 & "$env:LOCALAPPDATA\Programs\AutoHotkey\Compiler\Ahk2Exe.exe" `
   /in "GoE.ahk" `
   /out "GoE.exe" `
