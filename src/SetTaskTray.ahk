@@ -1,7 +1,6 @@
 #Requires AutoHotkey v2.0
 
-; デフォルト設定を保持しておく
-DefaultConfigJson := FileRead("config.json")
+#Include ./DefaultConfigJson.ahk
 
 ; 標準メニュー項目をすべて削除
 A_TrayMenu.Delete()
