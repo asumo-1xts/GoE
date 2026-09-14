@@ -1,6 +1,6 @@
 #Requires AutoHotkey v2.0
 
-#Include ../vendor/IMEv2.ahk
+#Include ./GetIME.ahk
 
 ; Enterキーの挙動を差し替えるコントローラー
 class ImeEnterController {

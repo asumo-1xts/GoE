@@ -2,7 +2,6 @@
 #SingleInstance Force
 
 #Include vendor/JSON.ahk
-#Include vendor/IMEv2.ahk
 #Include src/Config.ahk
 #Include src/ImeEnterController.ahk
 #Include src/SetTaskTray.ahk
