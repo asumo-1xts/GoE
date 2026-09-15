@@ -3,7 +3,7 @@
 まずは[Issue](https://github.com/asumo-1xts/GoE/issues)よりお願いします。
 
 - バグの報告
-- 対応アプリ/Webサイトの追加
+- 対応アプリの追加希望
 - …
 
 ## 各種スクリプト

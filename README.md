@@ -17,7 +17,7 @@
 
 ## インストールと実行
 
-1. [Release](https://github.com/asumo-1xts/GoE/releases)から`GoE.zip`をダウンロードして、適当なフォルダに展開
+1. [Release](https://github.com/asumo-1xts/GoE/releases)から`GoE-*.zip`をダウンロードして、適当なフォルダに展開
 2. `GoE.exe`を実行🎉
 
 デフォルト設定では、次回のPC起動時から自動で`GoE.exe`が実行されるようになります。\
@@ -25,18 +25,24 @@
 
 ## 対応環境
 
-- Windows 11
-  - Microsoft IME
+**Windows 11 + Microsoft IME**
 
-### 対応アプリ
+### デスクトップアプリ
 
-Discord
+- Discord
+- Teams
+- M365 Copilot
 
-### 対応Webサイト
+### Webアプリ
 
-Discord / Teams / X（DM）/ ChatGPT / Gemini
+- Discord
+- Teams
+- X（DM）
+- ChatGPT
+- M365 Copilot
+- Gemini
 
 ---
 
-`config.json`内の`apps`および`sites`にてアプリやWebサイトの追加・削除が可能です。\
+`config.json`内の`apps`および`sites`にてアプリの追加・削除が可能です。\
 `GoE.exe`を再起動することで設定が反映されます。
