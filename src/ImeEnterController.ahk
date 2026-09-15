@@ -16,7 +16,7 @@ class ImeEnterController {
 
         alphabets := "abcdefghijklmnopqrstuvwxyz"
         numbers := "0123456789"
-        symbols := "`-`=`[`]`\`;\`',`./````"
+        symbols := "`-`=`[`]`\`;\`',`./````^@"
 
         ; 1文字キーの挙動を定義
         for key in StrSplit(alphabets . numbers . symbols) {
@@ -27,6 +27,11 @@ class ImeEnterController {
             ; Ctrl+文字：スルーせずホットキー名を受け取る
             Hotkey("^" key, (hk) => this.OnCtrlChar(hk))
         }
+
+        ; JISキーボードの「ろ」キーに対応
+        Hotkey("~SC073", (*) => this.OnChar())
+        Hotkey("~+SC073", (*) => this.OnChar())
+        Hotkey("^SC073", (hk) => this.OnCtrlChar(hk))
 
         ; Enterキーの挙動を定義
         Hotkey("$Enter", (*) => this.OnEnter())
