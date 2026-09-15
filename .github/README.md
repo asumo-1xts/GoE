@@ -31,13 +31,11 @@
 ### デスクトップアプリ
 
 - Discord
-- Teams
 - M365 Copilot
 
 ### Webアプリ
 
 - Discord
-- Teams
 - X（DM）
 - ChatGPT
 - M365 Copilot
