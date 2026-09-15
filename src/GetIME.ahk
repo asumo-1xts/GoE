@@ -15,12 +15,13 @@ IME_GET(WinTitle := "A") {
 
     targetHwnd := hwnd ; いったん宣言せざるを得ない
 
-    ; UIAライブラリを利用してWebView2/Chromiumベースのアプリか判定
+    ; UIAライブラリを利用してWebView2/Chromiumベースのアプリか否か判定
     if UIA.WindowIsChromium(hwnd) {
-        ; Teams v2などの場合、入力を処理する内部コントロールのHWNDを取得
+        ; 入力を処理する内部コントロールのHWNDを取得
         targetHwnd := ControlGetHwnd("Chrome_RenderWidgetHostHWND1", hwnd)
     } else if WinActive(WinTitle) {
         ; 従来のWindowsアプリ向けフォーカス取得処理
+        ; https://qiita.com/kenichiro_ayaki/items/d55005df2787da725c6f#31-ime_get-
         ptrSize := !A_PtrSize ? 4 : A_PtrSize
         cbSize := 4 + 4 + (ptrSize * 6) + 16
         stGTI := Buffer(cbSize, 0)
