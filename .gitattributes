@@ -1,1 +1,2 @@
 vendor/** linguist-vendored
+src/DefaultConfigJson.ahk linguist-generated
