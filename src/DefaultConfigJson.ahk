@@ -14,6 +14,7 @@ DefaultConfigJson := "
     "teams.live.com",
     "x.com/i/chat",
     "chatgpt.com",
+    "m365.cloud.microsoft",
     "gemini.google.com"
   ]
 }
