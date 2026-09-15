@@ -3,11 +3,11 @@
 #Include ../vendor/UIA_fixed.ahk
 
 /**
- * @function IME_GET
+ * @function IS_IME
  * @param WinTitle 対象Windowのタイトル（省略時はアクティブウィンドウ）
  * @return 1:ON / 0:OFF
  */
-IME_GET(WinTitle := "A") {
+IS_IME(WinTitle := "A") {
     hwnd := WinExist(WinTitle)
     if !hwnd {
         return 0

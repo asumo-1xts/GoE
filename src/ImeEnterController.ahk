@@ -1,6 +1,6 @@
 #Requires AutoHotkey v2.0
 
-#Include ./GetIME.ahk
+#Include ./IME.ahk
 
 /**
  * @class ImeEnterController
@@ -42,11 +42,11 @@ class ImeEnterController {
 
     ; 未確定文字があるかどうかを判定する
     IsConfirmed() {
-        return IME_GET("A") && this.hasChar
+        return IS_IME("A") && this.hasChar
     }
 
     OnChar() {
-        this.hasChar := IME_GET("A")
+        this.hasChar := IS_IME("A")
     }
 
     OnCtrlChar(hk) {
