@@ -21,8 +21,10 @@
 2. `GoE.exe`を実行🎉
 3. 各種メニューはタスクトレイの🪽アイコンを右クリック
 
-デフォルト設定では、次回のPC起動時から自動で`GoE.exe`が立ち上がるようになります。\
-これを無効化したい場合は、`config.json`内の`"startup"`を`false`にしてください。
+次回のPC起動時から自動で`GoE.exe`を起動したい場合は、Windowsの設定でスタートアップを有効にしてください。\
+そもそもこのアプリ一覧に`GoE.exe`を表示したくない場合は、`config.json`内の`"startup"`を`false`にしてください。
+
+<img src="startup.png" alt="Startup App" width="400">
 
 ## 対応環境
 
