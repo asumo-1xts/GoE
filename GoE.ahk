@@ -3,7 +3,7 @@
 
 #Include vendor/JSON.ahk
 #Include src/Initialize.ahk
-#Include src/ImeEnterController.ahk
+#Include src/EnterController.ahk
 #Include src/SetTaskTray.ahk
 #Include src/TargetMatcher.ahk
 
@@ -13,4 +13,4 @@ SetTitleMatchMode(2)            ; ウィンドウタイトルを部分一致で�
 config := Initialize("config.json")                 ; 設定をロード
 config.ApplyStartup("GoE")                          ; スタートアップ設定を適用
 matcher := TargetMatcher(config.apps, config.sites) ; 対応するターゲットを把握
-ImeEnterController(matcher)                         ; 本編開始
+EnterController(matcher)                            ; 本編開始

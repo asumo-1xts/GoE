@@ -3,10 +3,10 @@
 #Include ./IME.ahk
 
 /**
- * @class ImeEnterController
+ * @class EnterController
  * @description Enterキーの挙動を差し替えるコントローラー
  */
-class ImeEnterController {
+class EnterController {
     hasChar := false
 
     __New(matcher) {
