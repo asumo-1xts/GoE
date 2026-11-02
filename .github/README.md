@@ -13,6 +13,11 @@
 | 改行       | `Shift` + `Enter` | `Enter`          |
 | 送信       | `Enter`           | `Ctrl` + `Enter` |
 
+<br>
+
+[![AutoHotKey](https://img.shields.io/badge/AutoHotKey_v2-%23334455?style=flat&logo=autohotkey&logoColor=white)](https://www.autohotkey.com/)
+[![MIT](https://img.shields.io/badge/License-MIT-green)](/LICENSE)
+
 </div>
 
 ## インストールと実行
